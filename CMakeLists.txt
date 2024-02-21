@@ -22,13 +22,10 @@ endif()
 
 if(BUILD_TESTING)
   if(COMPILING_WITH_AMENT)
-    find_package(gtest_vendor REQUIRED)
     find_package(ament_cmake_gtest REQUIRED)
-
     ament_find_gtest()
     add_library(GTest::gtest ALIAS gtest)
     add_library(GTest::gtest_main ALIAS gtest_main)
-
   else()
     find_package(GTest REQUIRED)
   endif()
